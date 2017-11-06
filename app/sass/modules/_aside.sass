@@ -1,0 +1,121 @@
+aside
+	float: left
+	margin-right: 2px
+	width: 320px
+	background-color: #1f2229
+	.logo_contain
+		.logo
+			margin-top: 65px
+			font-size: 20px
+			margin-left: 30px
+			margin-bottom: 54px
+			font-family: "OpenSansBold"
+			h3
+				display: inline-block
+				&:nth-child(2n - 1)
+					color: green
+					background-color: white
+	nav
+		// background-color: red
+		font-family: "OpenSansBold"
+		ul
+			letter-spacing: 1.1px
+			background-color: #1f2229
+			list-style: none
+			padding-left: 0px
+			li
+				color: white
+				font-size: 16px
+				padding: 26px
+				padding-left: 30px
+				&:hover
+					background-color: #2a2d37
+				a
+					color: white
+					text-decoration: none
+
+
+
+@media screen and (max-width: 1200px)
+	aside
+		.contain_hamburger
+			display: none
+			// width:8
+		nav
+			display: block 
+
+@media screen and (max-width: 992px)
+	aside
+		width: 100%
+		nav
+			display: none
+			ul
+				li
+					text-align: left
+					font-size: 3.5rem
+					padding-top: 35px
+					padding-bottom: 35px
+		.logo_contain
+			display: flex
+			justify-content: space-between
+			.logo
+				float: left
+				width: 350px
+				img
+					width: 100%
+			.contain_hamburger
+				display: block
+				float: right
+				color: white
+				margin-right: 30px
+				#hamburger
+					margin-top: 30px
+					position: relative
+					display: block
+					height: 8rem
+					width: 8rem
+					background: #1f2229
+					transition: 0.3s
+					span
+						position: absolute
+						top: 50%
+						left: 50%
+						height: 0
+						width: 3rem
+						border: 0.25rem solid white
+						border-radius: 3rem
+						margin: -0.25rem 0 0 -1.75rem
+						transition: 0.3s
+						&:before,
+						&:after
+							content: ''
+							position: absolute
+							left: 50%
+							width: 3.5rem
+							height: 0.5rem
+							background: white
+							border-radius: 3rem
+							margin: 0 0 0 -1.75rem
+							transition: 0.3s
+						&:before
+							top: -1.125rem
+						&:after
+							top: 0.625rem
+				#hamburger.open
+					span
+						height: 3rem
+						margin: -1.875rem 0 0 -1.875rem
+						border-width: 0.375rem
+						&:before,
+						&:after
+							top: 1.1875rem
+							width: 2rem
+							margin: 0 0 0 -1rem
+						&:before
+							transform: rotate(-135deg)
+						&:after
+							transform: rotate(135deg)
+						
+
+
+

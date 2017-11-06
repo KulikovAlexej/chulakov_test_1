@@ -1,0 +1,54 @@
+@font-face
+    font-family: "OpenSansBold"
+    src : url("../fonts/OpenSans-Bold.ttf")
+body
+	background-color: white
+	margin: 0
+	padding: 0
+h1,h2,h3,p
+	margin: 0
+	padding: 0
+
+
+.wrapper
+	// background-color: pink
+	width: 960px
+	margin: 0 auto
+	height: 900px
+	// display: flex
+	@import 'modules/_aside.sass'
+	.content_part
+		float: right
+		width: 637px
+		background-color: yellow
+		@import 'modules/_header.sass'
+		@import 'modules/_section.sass'
+		@import 'modules/_footer.sass'
+
+// for screen width (993...1199)
+@media screen and (max-width: 1200px)
+	.wrapper
+		.content_part
+			// background: red
+	
+
+// // for screen width (769...992)
+@media screen and (max-width: 992px)
+	.wrapper
+		.content_part
+			width: 100%
+			
+			// background-color: black
+	
+
+// // for screen width (481...768)
+// @media screen and (max-width: 768px)
+	
+
+// // for screen width (321...480)
+// @media screen and (max-width: 480px)
+	
+
+// // for screen width (1...320)
+// @media screen and (max-width: 320px)
+	
