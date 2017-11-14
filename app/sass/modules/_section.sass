@@ -26,11 +26,14 @@ section
 		position: relative
 		margin-top: 18px
 		.card
+			// display: none
 			width: 347px
 			height: 235px
 			border: 2px solid #e4e9ee
 			border-radius: 15px
 			background-color: #f7f8f8
+			&:hover
+					box-shadow: grey 4px 4px 30px
 			.card_number
 				p
 					color: #8494ab
@@ -48,22 +51,84 @@ section
 				.card_number
 					p
 						margin-bottom: 5px
+					input
+						-moz-appearance: textfield
+					.valid
+						border: 1px solid green
+					.invalid
+						border: 1px solid red
 				.card_date
 					margin-top: 12px
-					select
+					color: #8494ab
+					.wrap_card_months
+						position: relative
+						float: left
+						width: 68px
 						height: 40px
-						font-size: 16px
-						border: 2px solid #e4e9ee
-					#card_months
-						width: 70px
-					#card_years
-						width: 85px
+						&:after
+							content: url(../img/arrow.png)
+							// border-style: solid
+							// border-width: 5px 5px 0 5px
+							// border-color: #e4e9ee transparent
+							position: absolute
+							top: 50%
+							right: 10px
+							z-index: 1
+							margin-top: -7px
+							pointer-events: none
+						#card_months
+							appearance: none
+							font-size: 15px
+							width: 100%
+							padding: 0 10px
+							background: white
+							border-radius: 3px
+							border: solid #e4e9ee 2px
+							outline: 0
+							height: 100%
+							-webkit-appearance: none
+							-moz-appearance: none
+						#card_months:hover
+							cursor: pointer
+					.wrap_card_years
+						position: relative
+						float: left
+						width: 87px
+						height: 40px
+						margin-left: 12px
+						&:after
+							content: url(../img/arrow.png)
+							// border-style: solid
+							// border-width: 5px 5px 0 5px
+							// border-color: #e4e9ee transparent
+							position: absolute
+							top: 50%
+							right: 10px
+							z-index: 1
+							margin-top: -7px
+							pointer-events: none
+						#card_years
+							font-size: 15px
+							width: 100%
+							padding: 0 10px
+							background: white
+							border-radius: 3px
+							border: solid #e4e9ee 2px
+							outline: 0
+							height: 100%
+							-webkit-appearance: none
+							-moz-appearance: none
+						#card_years:hover
+							cursor: pointer
 				#card_owner
 					margin-top: 20px
 					width: 297px
 					font-family: Arial
 					font-size: 20px
-
+				.valid
+					border: 1px solid green
+				.invalid
+					border: 1px solid red
 		.back
 			position: absolute
 			z-index: 1
@@ -79,95 +144,45 @@ section
 			p
 				text-align: right
 				margin-right: 30px
-			input
-				float: right
-				margin-right: 15px
-				width: 115px
+			.cvv_block
+				position: relative
+				input
+					float: right
+					margin-right: 15px
+					width: 115px
+					-moz-appearance: textfield
+				.valid
+					border: 1px solid green
+				.invalid
+					border: 1px solid red
+				.tip_btn
+					position: absolute
+					top: 5px
+					right: 20px
+				.tip_msg
+					display:none
+					position: absolute
+					width: 180px
+					border: solid grey 1px
+					background-color: #f7f8f8
+					border-radius: 4px
+					padding: 4px
+					top: -75px
+					right: 10px
+					z-index: 99
 	#send_data
 		padding: 9px 49px
 		margin-top: 34px
 		color: white
 		font-size: 17px
-		background-image: linear-gradient( 0deg, #87b700 0%, #a3c700 100%)
 		border-radius: 4px
 		border: none
-
+	.valid
+		background: linear-gradient( 0deg, #87b700 0%, #a3c700 100%)
+	.disabled
+		background: grey
 
 	input
 		padding: 10px
 		border: 2px solid #e4e9ee
 
-@media screen and (max-width: 992px)
-	section
-		padding-top: 60px
-		.about_payment
-			p
-				font-size: 3rem
-			table
-				tbody
-					tr
-						td
-							font-size: 3rem
-							width: 400px
-							padding-top: 10px
-							padding-bottom: 10px
-		h3
-			margin-top: 60px
-			font-size: 3rem
-		.cards
-			flex-direction: column
-			.card
-				width: 95%
-				height: auto
-				margin: 10px
-				margin-left: 0
-				// margin: 0 auto
-				left: 0
-				top: 0
-			.front
-				padding: 30px
-				padding-right: 0
-				.input_wrap
-					.card_number
-						p
-							font-size: 3rem
-						input
-							height: 7rem
-							width: 11rem
-							margin-right: 20px
-							font-size: 3rem
-					.card_date
-						// padding-top: 30px
-						p
-							font-size: 3rem
-						select
-							font-size: 3rem
-							height: 7rem
-							margin-right: 25px
-						#card_months
-							width: 9rem
-						#card_years
-							width: 14rem
-					#card_owner
-						height: 7rem
-						width: 93%
-						font-size: 3rem
-						padding-left: 35px
-			.back
-				margin: 0 auto
-				position: relative
-				top: -75px
-				padding-bottom: 30px
-
-				.stripe
-					height: 5rem
-				p
-					font-size: 2rem
-				input
-					margin-top: 20px
-					height: 7rem
-					width: 15rem
-		#send_data
-			font-size: 4rem
-			padding: 20px 60px
-			border-radius: 13px

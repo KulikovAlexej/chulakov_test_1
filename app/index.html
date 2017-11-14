@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="css/libs.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -50,37 +51,58 @@
 					</table>
 				</div>
 				<h3>Данные банковской карты:</h3>
-				<form action="">
+				<form id='bank_details' action="">
 					<div class="cards">
 						<div class="card front">
 							<div class="input_wrap">
 								<div class="card_number">
 									<p>Номер карты</p>
-									<input type="text" maxlength="4" value='1234'>
-									<input type="text" maxlength="4">
-									<input type="text" maxlength="4">
-									<input type="text" maxlength="4">
+									<div>
+										<input type="number" maxlength="4">
+										<input type="number" maxlength="4">
+										<input type="number" maxlength="4">
+										<input type="number" maxlength="4">
+									</div>
+									
 								</div>
 								<div class="card_date">
 									<p>Срок действия</p>
-									<select name="" id="card_months">
-										<option value="">01</option>
-									</select>
-									<select name="" id="card_years">
-										<option value="">2018</option>
-									</select>
+									<div class="wrap_card_months">
+										<select name="" id="card_months" class='valid'>
+											<option value="">01</option>
+											<option value="">02</option>
+											<option value="">03</option>
+											<option value="">04</option>
+										</select>
+									</div>
+									<div class="wrap_card_years">
+										<select name="" id="card_years" class='valid'>
+											<option value="">2018</option>
+											<option value="">2019</option>
+											<option value="">2020</option>
+											<option value="">2021</option>
+											<option value="">2022</option>
+										</select>
+									</div>
+									
 								</div>
 								<input type="text" id='card_owner' placeholder="Держатель карты">
 							</div>
 
 						</div>
 						<div class="card back">
-						<div class="stripe"></div>
-						<p>Код CVV2/CVC2</p>
-						<input type="text">
+							<div class="stripe"></div>
+							<p>Код CVV2/CVC2</p>
+							<div class="cvv_block">
+								<input type="tel" maxlength="3" >
+								<div class="tip_btn">
+									<img src="img/подсказка.png" alt="">
+								</div>
+								<div class="tip_msg">Трехзначное число на оборотной стороне</div>
+							</div>
+						</div>
 					</div>
-					</div>
-					<input id='send_data' type="submit" value="Оплатить">
+					<button id='send_data' class='valid' type="submit">Оплатить</button>
 				</form>
 
 			</section>
